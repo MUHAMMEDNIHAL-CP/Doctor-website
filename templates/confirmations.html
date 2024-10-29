@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact Confirmation
+{% endblock %}
+
+{% block content %}
+<div class="container text-center" style="margin-top: 50px;">
+    <h1>Contact Confirmation</h1>
+    <hr>
+
+    <div class="alert alert-info" role="alert">
+        We have received your message. Our team will review it and get back to you as soon as possible. Thank you for reaching out!
+    </div>
+
+    <a href="{% url 'contact' %}" class="btn btn-primary mt-3">Go Back to Contact Page</a>
+</div>
+{% endblock %}

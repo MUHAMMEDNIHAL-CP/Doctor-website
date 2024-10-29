@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center"> Our Contact </h1>
+<hr>
+
+<style>
+    body {
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .containers {
+        width: 50%;
+        line-height: normal;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    .labels {
+        margin: 10px 0 5px;
+        color: #555;
+    }
+    input, textarea {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    button {
+        padding: 10px;
+        background: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #555;
+    }
+</style>
+
+<div class="containers">
+    <h2>Contact Us</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <label class="labels">{{ field.label }}</label>
+            {{ field }}
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
